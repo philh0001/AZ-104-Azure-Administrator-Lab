@@ -53,7 +53,7 @@ The lab is separated into dedicated resource groups for different Azure workload
 
 ### 1. Identity
 
-📁 [`identity/`](identity/)
+📁 [`Identity/`](Identity/)
 
 Topics include:
 
@@ -67,7 +67,7 @@ Topics include:
 
 ### 2. Governance
 
-📁 [`governance/`](governance/)
+📁 [`Governance/`](Governance/)
 
 Topics include:
 
@@ -86,7 +86,7 @@ Topics include:
 
 ### 3. Storage
 
-📁 [`storage/`](storage/)
+📁 [`Storage/`](Storage/)
 
 Topics include:
 
