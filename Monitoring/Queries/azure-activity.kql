@@ -1,0 +1,13 @@
+// Historical lab query: returned a deployment event in screenshot #54.
+AzureActivity
+| where TimeGenerated > ago(1h)
+| project TimeGenerated, ResourceGroup, OperationNameValue, ActivityStatusValue
+| order by TimeGenerated desc
+
+// Historical failure-filter exercise: returned no matching rows at the time.
+// Preserved as executed; do not treat this result as a complete failure audit.
+AzureActivity
+| where TimeGenerated > ago(24h)
+| where ActivityStatusValue == "Failure"
+| project TimeGenerated, ResourceGroup, OperationNameValue, ActivityStatusValue
+| order by TimeGenerated desc

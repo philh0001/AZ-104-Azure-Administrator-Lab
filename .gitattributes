@@ -1,0 +1,6 @@
+*.md text eol=lf
+*.bicep text eol=lf
+*.bicepparam text eol=lf
+*.ps1 text eol=lf
+*.kql text eol=lf
+*.png binary

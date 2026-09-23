@@ -1,0 +1,25 @@
+# Secrets and local authentication/session state
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+*.rdp
+.azure/
+.Azure/
+*.log
+
+# Raw/unreviewed material and downloaded recovery executables
+Private/
+Unreviewed/
+*.exe
+*.zip
+
+# Local editor/OS files
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
+
+# Keep reviewed .bicep and .bicepparam source files tracked.
