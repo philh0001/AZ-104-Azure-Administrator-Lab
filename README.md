@@ -6,6 +6,37 @@ This repository is a written walkthrough of my personal Microsoft Azure learning
 - **Context:** Personal learning environment — not workplace or production experience
 - **Certification:** AZ-104 preparation in progress; exam booked for **16 October 2026**
 
+## Lab at a glance
+
+```mermaid
+flowchart LR
+    Admin["Administrator<br/>Portal, CLI and PowerShell"]
+    Identity["Microsoft Entra ID<br/>Users, groups and RBAC"]
+    Governance["Governance controls<br/>Policy, locks, tags and budget"]
+    Automation["Automation<br/>PowerShell and Bicep"]
+    ResourceGroups["Azure resource groups"]
+    Network["Networking<br/>VNets, NSGs, routes and DNS"]
+    Compute["Compute<br/>WEB01 and managed disks"]
+    Storage["Storage<br/>Blob and Azure Files"]
+    Monitoring["Monitoring and recovery<br/>Log Analytics, alerts and backup"]
+
+    Admin --> Identity
+    Admin --> Automation
+    Identity -->|"Scoped access"| ResourceGroups
+    Governance -->|"Guardrails"| ResourceGroups
+    Automation -->|"Repeatable changes"| ResourceGroups
+    ResourceGroups --> Network
+    ResourceGroups --> Compute
+    ResourceGroups --> Storage
+    ResourceGroups --> Monitoring
+    Network -->|"Connectivity and private DNS"| Compute
+    Network -->|"Private endpoint"| Storage
+    Compute -->|"Managed identity access"| Storage
+    Monitoring -->|"Alerting and recovery configuration"| Compute
+```
+
+This is a conceptual map of the recorded exercises, not a current-state inventory or a claim that every component existed simultaneously. See the [detailed lab topology](Architecture/readme.md) for resource names, address ranges and evidence boundaries.
+
 ## Why I undertook this project
 
 I built the lab to understand how Azure administrative controls work together and to practise diagnosing configuration problems from evidence rather than guesswork. The work supports my development towards an Information Security Officer role, particularly in access control, governance, auditability, controlled change, troubleshooting and recovery awareness.

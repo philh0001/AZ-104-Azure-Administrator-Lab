@@ -41,6 +41,18 @@ The [PowerShell command notes](Powershell/README.md) separate read and verificat
 
 I practised a reviewable sequence: define the desired state, build or preview it, deploy it and query the resulting resource.
 
+```mermaid
+flowchart LR
+    Source["Bicep template<br/>and parameter file"] --> Preview["What-if preview"]
+    Preview --> Review{"Expected change?"}
+    Review -->|"Revise"| Source
+    Review -->|"Accept"| Deploy["Resource-group deployment"]
+    Deploy --> Verify["PowerShell resource query"]
+    Verify --> Evidence["Captured evidence"]
+```
+
+The preview predicts a change; the deployment and resource query provide separate evidence that the change was applied and observed.
+
 ### Initial NSG preview and deployment
 
 The first NSG template defined an inbound HTTPS rule. I ran what-if before deployment.
